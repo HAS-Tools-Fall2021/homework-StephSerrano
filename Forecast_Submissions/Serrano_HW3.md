@@ -4,7 +4,7 @@
 **Assignment #3**
 ___
 ### Grade
-1/3: Good job but I don't see your python script submitted here?
+3/3: Great work! Thanks for adding your python script. 
 
 Also a few notes:
   - for question 1 you should use the `type` function to check the type. The object type is list and the type for the elements of the object are either floats or ints.
