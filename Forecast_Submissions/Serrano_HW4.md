@@ -3,6 +3,14 @@
 
 **Assignment #4**
 
+_________
+## Grade: 
+3/3: Wow really great analysis! I really like your logic here.  We will talk through quantiles and histograms more tomorrow and feel free to speak up if you have questions. 
+- Good job trying to get your pictures into the markdown. They didn't come through this time but I have instructions for next week to help with this. 
+- Question 2: its composed of floats not ints
+
+_________
+
 1. Provide a summary of the forecast values you picked and why. Include discussion of the quantitative analysis that lead to your prediction. This can include any analysis you complete but must include at least two histograms and some quantitative discussion of flow quantiles that helped you make your decision.
   - I am predicting that the flow will continue on a decreasing trend. The flow will be **95 cfs** for the first week and will decrease to **80 cfs** the second week. Looking at the 10th, 50th, and 90th percentile (which I don't know if I even did right), there is a decreasing pattern for the month of September. It dips into the 60's for cfs at the 10th percentile which leads me to think that the decrease will be more rapid than I initially expected. The 50th percentile says 157 cfs but recent patterns show that the flow has been in the upper 90's which heavily influenced my guess. The first histogram (hopefully) shows the the trend in the last 18 days and shows the flow being predominantly on the lower end with the highest count being around the 100 cfs mark. The second one is for the entire year (hopefully) and shows a similar trend with the flow being on the lower end.
 - ![Histogram_1](.png)
