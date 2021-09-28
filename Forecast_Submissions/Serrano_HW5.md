@@ -3,6 +3,9 @@
 
 **Assignment #5**
 
+### Grade
+3/3: Nice job! FYI For quesiton 5 you do need a for loop. Check out my solution and come ask me questions if you want to walk through it.  
+
 ***Prediction:***
 I think that the flow will continue to decrease but because it seemed to have rained a fair amount throughout Arizona this past weekend, it will not be decreasing as much as I thought it would be. I think that the flow for the first week will be **85 cfs** and drop down to **80 cfs**. My reasoning is still mostly the same as last weeks. The month of September has a minimum value of 37.5 cfs and October has a minimum flow of 59.8 cfs over the entire data period but because it has been a relatively "wet" year, I do not think that the flow will drop that low quite yet and am staying in a similar range as last week. I also do not believe that there will be a drastic enough rain event to significantly push the flow beyond what I had originally predicted in the Week 1 Forecast. 
 
