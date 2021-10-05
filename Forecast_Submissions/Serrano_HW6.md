@@ -3,6 +3,11 @@
 **October 3rd, 2021**
 
 **Assignment #6**
+___
+## Grade 
+3/3 : Great work going through all of the examples, very thorough! I like the changes you made but would encourage you to also get more creative with this as these are all still pretty close to the examples I provided you in the starter code. The puprpose of making your own graphs is to plot whatever you think you need to know in order to make a better forecast. I do like how you used the plots in your logic though :) 
+
+___
 
 For your write up you should present your plots and for every plot provide a short summary of (1) how you made it, (2) why you made it and what it tells you.
 
