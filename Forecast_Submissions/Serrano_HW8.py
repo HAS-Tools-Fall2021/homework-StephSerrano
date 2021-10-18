@@ -1,5 +1,4 @@
-# %%
-# Import the modules we will use
+#%%
 import os
 import numpy as np
 import pandas as pd
@@ -7,20 +6,16 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import datetime
 
-# %%
-# Set the file name and path to where you have stored the data
+#%%
 filename = 'streamflow_week8.txt'
 filepath = os.path.join('../data', filename)
 print(os.getcwd())
 print(filepath)
 
-
-# %%
-# Read the data into a pandas dataframe
+#%%
 data=pd.read_table(filepath, sep = '\t', skiprows=30,
         names=['agency_cd', 'site_no', 'datetime', 'flow', 'code'],
-        parse_dates=['datetime']
-        )
+        parse_dates=['datetime'])
 
 #%%
 # Expand the dates to year month day
@@ -30,13 +25,53 @@ data['day'] = pd.DatetimeIndex(data['datetime']).day
 data['dayofweek'] = pd.DatetimeIndex(data['datetime']).dayofweek
 
 #%%
-#Min, Max, Std., etc. for all months
-Data1 = data.groupby("month")["flow"]
+#Week 1 Forecast:
+def Week1_Forecast(month, startyear, data):
 
-Data1.describe()
+    '''Week 1 Forecast Summary: 
+    
+    This is going to give the median for a given day for a given year. Originally, this loop had an array for 31 days.
+    I changed the range and storage to only provide data for one specific day in an overly complicated way.
+    I am using the flow for October 18th, 2018 as my Week 2 Forecast because I have some thought/
+ that the year 2018 is similar, in terms of "wetness", to our current year. I am specifically using the 11th because USGS will update the flow Oct. 11th, 2021.'''
+
+    Week1_Forecast = np.zeros(1)
+    for x in range(1):
+        daytemp = x + 18
+        tempdata = data[(data['year']) & (data['month']) & (data['day'] == daytemp)]
+        Week1_Forecast[x] = np.median(tempdata['flow'])
+        print('Iteration', x, 'Day=', daytemp, 'Flow=', Week1_Forecast[x])
+
+    return Week1_Forecast 
+
+print(Week1_Forecast(10, 2017, data))
+
+print(Week1_Forecast.__doc__)
+ 
+#%%
+#Week 2 Forecast:
+def Week2_Forecast(month, year, data):
+    '''Week 2 Forecast Summary: 
+    
+    Week 2 has similar reasoning as above except I used the Week 2 date (October 25th) for the year 2018 for my Week 2 forecast.
+    This is why the daytemp = x+18.'''
+
+    Week2_Forecast = np.zeros(1)
+    for x in range(1):
+        daytemp = x + 25
+        tempdata = data[(data['year']) & (data['month']) & (data['day'] == daytemp)]
+        Week2_Forecast[x] = np.median(tempdata['flow'])
+        print('Iteration', x, 'Day=', daytemp, 'Flow=', Week2_Forecast[x])
+
+    return Week2_Forecast
+
+print(Week2_Forecast(10, 2018, data))
+
+print(Week2_Forecast.__doc__)
 
 #%%
-#Flow Scatterplot for the month of October
+#Plots to show flow for October, specifically in 2018:
+#Scatter plot of Flow [cfs] vs Day for October:
 oct_data = data[data['month']==10] 
 fig, ax = plt.subplots()
 ax.scatter(oct_data['day'], oct_data['flow'], alpha=0.2,
@@ -44,35 +79,37 @@ ax.scatter(oct_data['day'], oct_data['flow'], alpha=0.2,
 ax.set(yscale='log')
 ax.set_xlabel('Day of the month')
 ax.set_ylabel('Flow')
+ax.set(title="Flow [cfs] vs. Day for October")
 plt.show()
 fig.set_size_inches(5,3)
-fig.savefig("Scatterplot_Oct_Flow.png")
-
-# %%
-#Observed Avg. Weekly Flow for Oct. 1, 2017 to Nov. 15th, 2017.
-fig, ax = plt.subplots()
-ax.plot(data['datetime'], data['flow'], label='flow')
-ax.set(title="Observed Flow Fall 2017 Trend", xlabel="Date", ylabel="Weekly Avg Flow [cfs]",
-        yscale='log', xlim=[datetime.date(2017, 10, 1), datetime.date(2017, 11, 15)])
-ax.legend()
-plt.show()
-fig.set_size_inches(5,3)
-fig.savefig("Observed_Fall_2017_Flow.png")
+fig.savefig("Oct_Scatterplot_Flow.png")
 
 #%%
-#October flows for 2010 to 2018
-mypal = sns.color_palette('plasma', 12)
+#October Daily Flows from 2008 to 2018:
+mypal = sns.color_palette('magma', 12)
 mypal
 colpick = 0
 fig, ax = plt.subplots()
-for i in range(2010, 2019):
-        plot_data=data[(data['year']==i) & (data['month']==10)]
-        ax.plot(plot_data['day'], plot_data['flow'],
-                color=mypal[colpick], label=i)
+for i in range(2008, 2019):
+        plot_data=data[(data['year']==i) & (data['month'] == 10)]
+        ax.plot(plot_data['day'], plot_data['flow'], color=mypal[colpick], label=i)
         ax.set(yscale='log')
         ax.legend()
-        colpick = colpick+1
-
+        ax.set(title="Oct. Daily Flow from 2008-2018", xlabel="Day", ylabel="Daily Flow [cfs]")
+        colpick = colpick + 1
 fig.set_size_inches(5,3)
-fig.savefig("Oct_2010-2018_Flow.png")
+fig.savefig("Oct_Daily_Flow.png")
+
+#%%
+#Time Series of Flow from Oct. 1st, 2018 to Oct. 31st, 2018.
+fig, ax = plt.subplots()
+ax.plot(data['datetime'], data['flow'], label='Flow [cfs]')
+ax.set(title="Observed Flow October 2018", xlabel="Date", ylabel="Weekly Avg Flow [cfs]",
+        yscale='log', xlim=[datetime.date(2018, 10, 1), datetime.date(2018, 10, 31)])
+ax.legend()
+plt.show()
+fig.set_size_inches(5,3)
+fig.savefig("Oct_2018_Time_Series.png")
+# %%
+
 # %%
