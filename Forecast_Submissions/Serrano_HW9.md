@@ -3,6 +3,11 @@
 
 **Assignment #9**
 
+____________
+## Grade:
+**2/3:** Good effort! Sorry you couldn't get it de-bugged in time. We will share some solutions in class this week that will hopefully help. 
+____________
+
 1. A brief summary of the how you chose to generate your forecast this week.
   - I chose to generate my forecast this week by selecting a value that fit the trends on the plot I looked at as well as recent precipitation values in Flagstaff (rather than Prescott). It had been a little rainy (and snow had fallen two weeks ago) so I assumed the values would be a little higher at **100 cfs** for the first week and **85 cfs** for the second week. The second week is lower because the trend seems to go downward for a moment in October for previous years and the weather seems to be clear.
 
