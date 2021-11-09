@@ -2,6 +2,10 @@
 **November 8th, 2021**
 
 **Assignment #11**
+_____
+### Grade
+3/3 - Nice work. FYI for the spatial resolution and extent question I was asking what is the size of each grid cell and the total spatial area that was covered. You can see more about how to answer that in the starter code. 
+____
 
 A brief summary of the how you chose to generate your forecast this week.
 A description of the dataset you added
