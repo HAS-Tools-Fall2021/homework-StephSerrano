@@ -1,5 +1,9 @@
 ### Steph Serrano
 # FAIR Science - Week 14
+_____
+### Grade
+3/3: Great work! I'm sorry you were not able to get it to run but FYI someone else chose this paper too and had similar enviroment issues as you. One of the most common issues with sharing code is environment differences across platforms. This actually could be related to the indentation errors that you saw too.  
+___
 
 1. What is the paper or project you picked? Include a title, a link the the paper and a 1-2 sentence summary of what its about.
   - Paper: "SMAP-HydroBlocks, a 30-m satellite-based soil moisture dataset for the conterminous US"
