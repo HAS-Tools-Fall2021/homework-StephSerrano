@@ -3,6 +3,8 @@
 ### Week 15 - Computing
 ### 6 Dec. 2021
 
+### Grade
+3/3: Great job! I'm glad you got it running. We'll discuss more exactly what happened and why with our workflows tomorrow. 
 
 1. What resources did you request on Puma? How long did you wait in the queue for your job to run and how long did it take to run?
   - I requested a node to run the files on. I only waited in the queue for less than 5 minutes and it took only a few minutes to actually run the job.
